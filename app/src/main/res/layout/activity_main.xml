@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorWhite"
+    tools:context="anel.com.mx.kgardenapp.MainActivity">
+
+
+   <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_height="match_parent"
+       android:layout_width="match_parent"
+       android:fillViewport="true">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/animation_view1"
+          android:layout_width="match_parent"
+          android:layout_height="113dp"
+          app:lottie_autoPlay="true"
+          app:lottie_fileName="dna_like_loader.json"
+          app:lottie_imageAssetsFolder="assets"
+          app:lottie_loop="true" />
+
+      <ImageView
+          android:id="@+id/textView2"
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:background="@drawable/welcome"
+          android:textAlignment="center"
+
+          />
+
+
+      <ImageView
+          android:id="@+id/imageView3"
+          android:layout_width="wrap_content"
+          android:layout_height="100pt"
+          android:orientation="vertical"
+          app:srcCompat="@drawable/leerlibro" />
+
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="68dp"
+          app:srcCompat="@drawable/remak" />
+
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/animation_view"
+          android:layout_width="wrap_content"
+          android:layout_height="50pt"
+          app:lottie_autoPlay="true"
+          app:lottie_colorFilter="@color/colorVino"
+          app:lottie_fileName="5_stars.json"
+          app:lottie_imageAssetsFolder="assets"
+          app:lottie_loop="true" />
+   </LinearLayout>
+
+   </ScrollView>
+</android.support.constraint.ConstraintLayout>

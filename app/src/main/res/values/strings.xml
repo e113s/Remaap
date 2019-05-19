@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">ReMaAP</string>
+    <string name="escribe_nombre">Nombre</string>
+    <string name="pregunta_edad">¿Cuántos años tienes?</string>
+    <string name="pregunta_sexo">¿Selecciona si eres niño o niña?</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="salir">Salir</string>
+    <string name="atras">Atrás</string>
+
+    <string name="aceptar">Aceptar</string>
+
+    <string name="selecciona_numero">Toca el </string>
+    <!-- actividad num31 -->
+    <string name="toca_coleccion">Toca la tarjeta con </string>
+    <string name="elementos">elementos </string>
+
+    <string name="de_la">de la </string>
+    <string name="lado_izquierdo">izquierda</string>
+    <string name="lado_derecho">derecha</string>
+    <string name="selecciona_coleccion">Toca donde hay</string>
+    <string name="selecciona_moneda">Toca la moneda de </string>
+
+
+    <!--apartado para numeros -->
+
+    <string name="zero">cero</string>
+    <string name="one">uno</string>
+    <string name="dos">dos</string>
+    <string name="tres">tres</string>
+    <string name="cuatro">cuatro</string>
+    <string name="cinco">cinco</string>
+    <string name="seis">seis</string>
+    <string name="siete">siete</string>
+    <string name="ocho">ocho</string>
+    <string name="nueve">nueve</string>
+    <string name="diez">diez</string>
+
+    <!--lados izquierda derecha -->
+
+    <string name="izquierda"> izquierda</string>
+    <string name="derecha">derecha</string>
+
+    <!-- Num3_2 textos -->
+    <string name="instruccion">Cuanto es:</string>
+    <string name="operacion_suma">Suman</string>
+    <string name="operacion_resta">Restan</string>
+
+    <!-- Num3_3 textos-->
+    <string name="tarjeta_uno">Observa atentamente:</string>
+    <string name="tarjeta_titulo">Tarjeta 1</string>
+    <string name="tarjeta_dos">Toca los números que estaban en la tarjeta anterior</string>
+
+    <string name="selec_tarjetas">Selecciona las tarjetas que igualen la cantidad de elementos</string>
+
+    <!-- mensajes motivacion -->
+    <string name="excelente">Excelente!!</string>
+    <string name="sigue_adelante">Sigue adelante!!</string>
+    <string name="selecciona_mas">Selecciona más tarjetas </string>
+    <string name="selecciona_mumeros_abajo">Selecciona los números de abajo:::</string>
+
+    <!--mensajes para mostrar en los resutlados -->
+
+    <string name="aciertos_label">Aciertos</string>
+    <string name="fallas_label">Fallas</string>
+    <string name="numero_preguntas_label">Preguntas</string>
+    <string name="tiempo_label">Tiempo</string>
+    <string name="acertividad_label">Porcen. Éxito</string>
+
+    <!-- menu drawable -->
+    <string name="title_activity_drawing">DrawingActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Salir</string>
+    <string name="action_about">Acerca de</string>
+
+    <!-- titulos  del menu lateral -->
+
+<!-- temas -->
+    <string name="action_comunicar_numeros">Comunicar Números</string>
+    <string name="action_escribir_numeros">Escribir Números</string>
+    <string name="action_compara_colecciones">Comparar Colecciones</string>
+    <string name="action_iguala_colecciones">Iguala Colecciones</string>
+    <string name="action_clasifica_colecciones">Clasifica Colecciones</string>
+    <string name="action_sucesion_numeros">Sucesión Numerica</string>
+    <string name="action_identifica_monedas">identifica Monedas</string>
+    <string name="action_resuelve_problemas">Resuelve Problemas</string>
+
+     <!-- habilidades -->
+    <string name="action_percepcion">Percepción</string>
+    <string name="action_atencion">Atención</string>
+    <string name="action_memoria">Memoria</string>
+
+    <string name="action_video">Video</string>
+
+
+    <!--todos los ejes involucrados -->
+    <string name="eje_numeros">Eje numeros</string>
+    <string name="eje_figuras_geometricas">Eje Figuras Geometricas</string>
+    <string name="eje_magintudes_medidas">Eje Maginutdes/Medidas</string>
+
+    <string name="Num3_5Activity">Num3_5Activity</string>
+    <string name="Num3_5_0Activity">Num3_5_0Activity</string>
+    <string name="Num3_5_1Activity">Num3_5_1Activity</string>
+
+
+    <!--mensjes de salida -->
+    <string name="title_exit">No te vayas!</string>
+    <string name="message_exit">¿Estas seguro que quieres salir?</string>
+
+
+    <string name="title_result">Resultado Final</string>
+
+
+
+
+</resources>

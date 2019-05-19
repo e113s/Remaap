@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#84c443</color>
+    <color name="primaryLightColor">#1abc9c</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="secondaryColor">#529307</color>
+    <color name="secondaryLightColor">#84c443</color>
+    <color name="secondaryDarkColor">#1d6500</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+
+    <color name="colorAccent">#529307</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorWhiteText">#ffffff</color>
+    <color name="colorWhite2">#f5F5F5</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="colorRojo">#df013a</color>
+    <color name="colorVino">#8a0808</color>
+    <color name="colorSteelBlue">#3472ab</color>
+    <color name="colorMediumSeaGreen">#5ad45c</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="primaryColor">#FFC107</color>
+    <color name="primaryColorDark">#FFA000</color>
+    <color name="backgroundColor">#fcfcfc</color>
+    <color name="lightGrayLine">#ededed</color>
+    <color name="deepPurple">#7c4dff</color>
+    <color name="materialYello">#ffb300</color>
+    <color name="materialGreen">#00bfa5</color>
+    <color name="pinkAccent">#ff4081</color>
+
+    <color name="menuLayout">#3498db</color>
+
+
+
+</resources>

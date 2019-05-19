@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "800709451936",
+    "firebase_url": "https://remakapp.firebaseio.com",
+    "project_id": "remakapp",
+    "storage_bucket": "remakapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800709451936:android:678f74d4a3d31e88",
+        "android_client_info": {
+          "package_name": "anel.com.mx.kgardenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800709451936-9jkfpndme42vtmv9tb14oqjtdolq8eab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "anel.com.mx.kgardenapp",
+            "certificate_hash": "502cc392c576639b0ef20fd30c92ebbb65a30ff7"
+          }
+        },
+        {
+          "client_id": "800709451936-beo5bqhp892k0gqsr19c6fn8l1pplqta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcWbDAwSZwslOUlPWlCwo5sRaqT67ko5A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800709451936-beo5bqhp892k0gqsr19c6fn8l1pplqta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
