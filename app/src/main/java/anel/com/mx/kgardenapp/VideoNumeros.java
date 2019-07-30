@@ -27,7 +27,7 @@ public class VideoNumeros extends NumParentActivity {
         String fileName = "video_numeros";
         String filePlace = "android.resource://" + getPackageName() + "/raw/" + fileName;
         //String filePlace = "https://www.youtube.com/watch?v=pSqnl2eSu9Y";
-        videoView= (VideoView) findViewById(R.id.videoViewId);
+        videoView= findViewById(R.id.videoViewId);
         videoView.setVideoURI(Uri.parse(filePlace));
 
         videoView.start();

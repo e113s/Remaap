@@ -46,12 +46,13 @@ public class AgeActivity extends NumParentActivity {
         sexo =getIntent().getExtras().getString("sexo");
         mp= MediaPlayer.create(AgeActivity.this, R.raw.anios);
         mp.start();
-        ImageView3 = (ImageView)findViewById(R.id.imageViewEdad3);
-        ImageView4 = (ImageView)findViewById(R.id.imageViewEdad4);
-        ImageView5 = (ImageView)findViewById(R.id.imageViewEdad5);
-        ImageView6 = (ImageView)findViewById(R.id.imageViewEdad6);
-        ImageView7 = (ImageView)findViewById(R.id.imageViewEdad7);
-        ImageView8 = (ImageView)findViewById(R.id.imageViewEdad8);
+        mp.release();
+        ImageView3 = findViewById(R.id.imageViewEdad3);
+        ImageView4 = findViewById(R.id.imageViewEdad4);
+        ImageView5 = findViewById(R.id.imageViewEdad5);
+        ImageView6 = findViewById(R.id.imageViewEdad6);
+        ImageView7 = findViewById(R.id.imageViewEdad7);
+        ImageView8 = findViewById(R.id.imageViewEdad8);
 
 
         ImageView3.setOnClickListener(new View.OnClickListener() {
@@ -164,8 +165,6 @@ public class AgeActivity extends NumParentActivity {
         //lama a otra actividad
         Button forward = findViewById(R.id.buttonForward3);
 
-
-
         forward.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(AgeActivity.this, WelcomeActivity.class);
@@ -177,6 +176,7 @@ public class AgeActivity extends NumParentActivity {
                 }else if(edad==0)
                 {
                     mp.start();
+                    mp.release();
                 }
                 //velocidad de aparcion de otra actividad
                // overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_left);
@@ -187,7 +187,6 @@ public class AgeActivity extends NumParentActivity {
         //regresa a la actividad anterior
 
         Button back = findViewById(R.id.buttonBack);
-
 
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

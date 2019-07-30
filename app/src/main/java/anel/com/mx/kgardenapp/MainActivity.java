@@ -33,7 +33,7 @@ public class MainActivity extends NumParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View logo =findViewById(R.id.imageView3);
+        //View logo =findViewById(R.id.imageView3);
 
         if(super.isUserExist()){
             intent = new Intent(MainActivity.this, DrawingActivity.class);
@@ -42,7 +42,8 @@ public class MainActivity extends NumParentActivity {
         }
 
         //final Intent intent = new Intent(MainActivity.this, DataCollectorActivity.class);
-      Thread thread = new Thread(){
+
+        Thread thread = new Thread(){
 
           public void run(){
               try {
@@ -50,9 +51,10 @@ public class MainActivity extends NumParentActivity {
                   mp.start();
                   sleep(5000);
 
+
+                  mp.release();
                   startActivity(intent);
                   overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_left);
-                  mp.stop();
                   finish();
               } catch (InterruptedException e) {
                   e.printStackTrace();
@@ -60,7 +62,6 @@ public class MainActivity extends NumParentActivity {
           }
       };
         thread.start();
-
 
     }
 

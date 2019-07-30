@@ -30,6 +30,7 @@ import java.util.List;
 
 import anel.com.mx.kgardenapp.DataCollectorActivity;
 import anel.com.mx.kgardenapp.MainActivity;
+import anel.com.mx.kgardenapp.Nivel1;
 import anel.com.mx.kgardenapp.Num3_1Activity;
 import anel.com.mx.kgardenapp.Num3_5Activity;
 import anel.com.mx.kgardenapp.Num3_5_0Activity;
@@ -69,7 +70,7 @@ public class DrawingActivity  extends NumParentActivity
         
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         findViewById(R.id.LayoutIdOne).setOnClickListener(this);
@@ -103,13 +104,13 @@ public class DrawingActivity  extends NumParentActivity
             }
         });*/
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         View hView =navigationView.getHeaderView(0);
 
         nombreMenu = hView.findViewById(R.id.textViewMenuIzqNombre);
@@ -214,7 +215,12 @@ public class DrawingActivity  extends NumParentActivity
             }
         });
 
-
+        if(getEstatusActividad(Nivel1.class)){
+            layout.findViewById(R.id.imageViewPercepcion2).setBackgroundResource(R.drawable.image_video);
+        }
+        layout.findViewById(R.id.cardViewContentMainFive).setOnClickListener((view) -> {
+            miSeleccion(view,R.string.eje_numeros,R.string.action_comunicar_numeros,R.string.action_percepcion2);
+        });
 
     }
 
@@ -273,15 +279,13 @@ public class DrawingActivity  extends NumParentActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     public void miSeleccion(View view, final int eje, int objetivo, int habilidad){
-
         Class claseDestino=null;
-
 
         switch (habilidad){
             case  R.string.action_percepcion:
@@ -298,10 +302,14 @@ public class DrawingActivity  extends NumParentActivity
             case  R.string.action_video:
                 claseDestino=VideoNumeros.class;
                 break;
+            case R.string.action_percepcion2:
+                claseDestino = Nivel1.class;
+                break;
         }
 
-
-
+        //Intent prueba = new Intent(this,claseDestino);
+        //startActivity(prueba);
+        //finish();
         //Class actividad =getActivity();
         //getNextActividad(R.string.)
         llamaOtroNivel(new Actividad(),this.getClass(),claseDestino, new int[33][11], 0, 0, new ArraySet<Integer>(),0,super.getUser());
@@ -414,11 +422,9 @@ public class DrawingActivity  extends NumParentActivity
                     break;*/
             }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         //}
     }
-
-
 }

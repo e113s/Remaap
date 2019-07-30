@@ -67,27 +67,20 @@ import anel.com.mx.kgardenapp.impl.IGame;
  */
 
 public class NumParentActivity extends AppCompatActivity {
-
-
     private Actividad actividad;
     public MediaPlayer mediaPlayer;
     private Dialog mensaje;
     private int [] numbersResource={R.raw.cero,R.raw.uno,R.raw.dos,R.raw.tres,R.raw.cuatro,R.raw.cinco,R.raw.seis,R.raw.siete,R.raw.ocho,R.raw.nueve,R.raw.diez};
     private SharedPreferences preferences ;
     private UsuarioFB user;
-
     static  FirebaseDatabase database;
     private DatabaseReference myRef;
-
     public AppDatabase mDb;
-
     public Boolean estatus= false;
-
     public HashMap<Integer, String> ejesMap = new HashMap<>();
     public HashMap<Integer, String> temaMapa = new HashMap<>();
     public HashMap<Integer, String> objetivoMap = new HashMap<>();
     public HashMap<String,String> actividadesMap = new HashMap<>();
-
     public int MENU_PRINCIPAL =1;
     public int SALIR_APP =0;
     /**
@@ -102,29 +95,17 @@ public class NumParentActivity extends AppCompatActivity {
      * obtiene la conexion
      */
     public void getConnection(){
-
-
         if(database == null) {
             database = FirebaseDatabase.getInstance();
             database.setPersistenceEnabled(true);
-
         }
-
-
-        
-
     }
 
     public Actividad getInformation() {
-
         user= (UsuarioFB) getIntent().getSerializableExtra("usuarioFB");
-
-
         Bundle data = getIntent().getExtras();
-
         actividad = (Actividad) data.getParcelable("actividad");
         //Toast.makeText(getApplicationContext(), "la pregunta es la numero " + actividad.getNumeroPregunta(), Toast.LENGTH_SHORT).show();
-
         int[][] arrayReceived = null;
         Object[] objectArray = (Object[]) getIntent().getExtras().getSerializable("numeros");
         if (objectArray != null) {
@@ -133,6 +114,7 @@ public class NumParentActivity extends AppCompatActivity {
                 arrayReceived[i] = (int[]) objectArray[i];
             }
         }
+
         actividad.setNumeros(arrayReceived);
 
         ArrayList<Integer> numerosExluidos = data.getIntegerArrayList("numExcluidosList");
@@ -141,18 +123,15 @@ public class NumParentActivity extends AppCompatActivity {
              ) {
             numEcxluidosList.add(num);
         }
+
         actividad.setNumEcxluidosList(numEcxluidosList);
-
-
 
         return actividad;
     }
 
 
     public void llamaVideo() {
-
         Intent intent = new Intent(this, VideoNumeros.class);
-
         intent.putExtra("nombre", "Otro nivel");
         startActivity(intent);
     }
@@ -178,7 +157,6 @@ public class NumParentActivity extends AppCompatActivity {
     public void llamaOtroNivel(Actividad actividad, Class claseOrigen, Class claseDestino, int[][] progresoJuego, int aciertosTotales, int fallosTotales, Set<Integer> numExcluidosList, int numeroPregunta, UsuarioFB usuarioFB ) {
         // llamaResultado();
         // Toast.makeText(getApplicationContext(),"llegaste a otro nivel",Toast.LENGTH_LONG).show();
-
 
         actividad.setNumeros(progresoJuego);
         actividad.setAciertosTotales(aciertosTotales);
@@ -213,7 +191,6 @@ public class NumParentActivity extends AppCompatActivity {
      * @param imagen       la imagen a mostrar , se recomienda el tamaño 516X587 maximo
      */
     public void llamarPopup(String textoMensaje, int imagen) {
-
         mensaje = new Dialog(this);
         mensaje.setContentView(R.layout.custompopup);
         TextView textView = mensaje.findViewById(R.id.textoMensaje);
@@ -222,14 +199,10 @@ public class NumParentActivity extends AppCompatActivity {
         imageView.setBackgroundResource(imagen);
         mensaje.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mensaje.show();
-
     }
 
     public void closeWindow(View view){
-
-
         mensaje.hide();
-
     }
 
 
@@ -246,51 +219,35 @@ public class NumParentActivity extends AppCompatActivity {
      * @param numeroPregunta
      */
     public void llamarResultadoPopup(final Actividad actividad, long tFinal, long tInicio, final Class claseDestino, final int[][] progresoJuego, final int aciertosTotales, final int fallosTotales, final Set<Integer> numExcluidosList, final int numeroPregunta) {
-
-
         long tiempoFinal = System.currentTimeMillis();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView= inflater.inflate(R.layout.custom_results_popup, null);
         builder.setView(dialogView);
 
-
-// Add the buttons
-
-
+        // Add the buttons
         TextView aciertosTextView =dialogView.findViewById(R.id.textNumAciertosId);
         aciertosTextView.setText(String.valueOf(aciertosTotales));
-
         ProgressBar progressBarAciertos =dialogView.findViewById(R.id.progressBarAciertos);
-
         //progressBarAciertos.setProgress(aciertosTotales,true);
         progressBarAciertos.setProgress(aciertosTotales);
 
 
         //fallas
-
         TextView fallasTextView =dialogView.findViewById(R.id.textNumFallasId);
         fallasTextView.setText(String.valueOf(fallosTotales));
-
-
         ProgressBar progressBarFallos =dialogView.findViewById(R.id.progressBarFallas);
-
         progressBarFallos.setProgress(fallosTotales);
 
-
         //preguntas
-
         TextView preguntasTextView =dialogView.findViewById(R.id.textNumPreguntasId);
         preguntasTextView.setText(String.valueOf(numeroPregunta));
-
-
         ProgressBar progressBarPreguntas =dialogView.findViewById(R.id.progressBarPreguntas);
-
         //progressBarAciertos.setProgress(aciertosTotales,true);
         progressBarPreguntas.setProgress(numeroPregunta);
 
+        //Tiempo
         Chronometer simpleChronometer = (Chronometer)  dialogView.findViewById(R.id.crono);
-
         String tiempo = String.valueOf((tiempoFinal-tInicio)/1000).concat(" segundos");
         simpleChronometer.setText(tiempo);
         //simpleChronometer.setBase((tiempoFinal-tInicio)/1000);
@@ -309,12 +266,9 @@ public class NumParentActivity extends AppCompatActivity {
 
         ratingBar.setNumStars((int) exito);
 
-// Create the AlertDialog
+        // Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
-
-
-
 
 /*
         long tiempoFinal = System.currentTimeMillis();
@@ -379,14 +333,9 @@ public class NumParentActivity extends AppCompatActivity {
         mensaje.getWindow().makeActive();
         mensaje.show();
 */
-
-
-
     }
 
     public void llamaResultado(final Actividad actividad, long tFinal, long tInicio, final Class claseDestino, final int[][] progresoJuego, final int aciertosTotales, final int fallosTotales, final Set<Integer> numExcluidosList, final int numeroPregunta) {
-
-
         //Num3_7a_Activity.class
         tFinal = System.currentTimeMillis();
         long tDuracion = (tFinal - tInicio) / 1000;
@@ -399,12 +348,9 @@ public class NumParentActivity extends AppCompatActivity {
                 "Tiempo= " + tDuracion + "segundos" + "\n" +
                 "Acertivicidad =" + "Bien");
 
-
         myResult.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-
                 actividad.setNumeros(progresoJuego);
                 actividad.setAciertosTotales(aciertosTotales);
                 actividad.setFallosTotales(fallosTotales);
@@ -432,29 +378,20 @@ public class NumParentActivity extends AppCompatActivity {
         return actividad;
     }
 
-
     public void setData() {
-
     }
-
 
     public void setActividad(Actividad actividad) {
         this.actividad = actividad;
     }
 
     public void getSiguienteNivel(String edad, String sexo, String nombre) {
-
         switch (Integer.valueOf(edad)) {
             case 3:
-
         }
-
-
     }
 
-
     public boolean playAudio(final int scriptToPlay, final int sleepTime) {
-
         boolean estado = true;
         // agrega auido
         Thread thread = new Thread() {
@@ -473,20 +410,11 @@ public class NumParentActivity extends AppCompatActivity {
         };
         thread.start();
 
-
-
-
-
         return estado;
     }
 
-
-
     public boolean playAudioNumbers(final int scriptToPlay) {
-
         boolean estado = true;
-
-
         // agrega auido
         Thread thread = new Thread() {
 
@@ -541,7 +469,6 @@ public class NumParentActivity extends AppCompatActivity {
      *         A new user for this device
      */
     public String getUIDUsuario(){
-
         //obtengo las preferencias del usuario
         preferences = getApplication().getSharedPreferences("palyerPrefs",0);
         //obtengo el user UID
@@ -557,18 +484,16 @@ public class NumParentActivity extends AppCompatActivity {
             //genero un random
             Random random = new Random();
             //el random generado 10000 es multiplicado por tres
-            stringDate = stringDate + String.valueOf(random.nextInt(10000)*3);
+            stringDate = stringDate + random.nextInt(10000) * 3;
             userUID = stringDate;
             preferences.edit().putString("userUID", userUID).commit();
             //Toast.makeText(this, "la llave userUID es  ::::::::::"+userUID, Toast.LENGTH_LONG).show();
         }
         return userUID;
-
     }
 
 
     public boolean isUserExist(){
-
         boolean existe= false;
         preferences = getApplication().getSharedPreferences("palyerPrefs",0);
         String userUID = preferences.getString("userUID",null);
@@ -577,7 +502,6 @@ public class NumParentActivity extends AppCompatActivity {
             //Toast.makeText(this, "la llave userUID es  ::::::::::"+userUID, Toast.LENGTH_LONG).show();
         }
         return existe;
-
     }
 
     /**
@@ -597,20 +521,12 @@ public class NumParentActivity extends AppCompatActivity {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
                 for (DataSnapshot ds: dataSnapshot.child("ejeFBTreeMap").child("NUMEROS").child("action_comunicar_numeros").child("ATENCION").getChildren()){
-
                     for(DataSnapshot ds2: ds.getChildren()){
                         ds2.getKey();
-
                     }
-
                 }
-
-
-
-                }
+            }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -629,10 +545,7 @@ public class NumParentActivity extends AppCompatActivity {
      * @return un objeto de tipo usuario fire base que contiene la información y progreso del juego
      */
     public UsuarioFB creaPerfil(final Integer edad,final String nombre , final String sexo){
-
-         myRef = database.getReference("users");
-
-
+        myRef = database.getReference("users");
         String fechaInicial =new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date());
         user = new UsuarioFB(getUIDUsuario(),nombre,edad,sexo,fechaInicial,fechaInicial,"activo");
         myRef.child(user.getId()).setValue(user);
@@ -642,50 +555,34 @@ public class NumParentActivity extends AppCompatActivity {
         preferences.edit().putString("sexo", sexo).commit();
         preferences.edit().putString("fechaUltimoAcceso", fechaInicial).commit();
 
-
         //acceso a firebase
-
         myRef = database.getReference("ejes");
-
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
                 List<ActividadResultadoFB> lista = new ArrayList();
-
-
                 //ds.child("numeros").child("action_comunicar_numeros").child("action_atencion").child("3").getChildrenCount()
                 // se pone la constante 3 por que el juego solo esta manejando tres juegos
                 for (DataSnapshot ds: dataSnapshot.child("numeros").child("action_comunicar_numeros").child("action_atencion").child(String.valueOf(3)).getChildren()){
-
                     lista = new ArrayList();
                     for(DataSnapshot ds2: ds.child("resultado").getChildren()){
                         lista.add(ds2.getValue(ActividadResultadoFB.class));
                         //lista.add(new ActividadResultadoFB());
                     }
-
                     mapaActividad.put(ds.getKey(),lista );
-
                 }
                 habilidad.put(Habilidad.ATENCION.name(),mapaActividad);
 
-
                 mapaActividad = new TreeMap<>();
                 for (DataSnapshot ds: dataSnapshot.child("numeros").child("action_comunicar_numeros").child("action_memoria").child(String.valueOf(3)).getChildren()){
-
                     lista = new ArrayList();
                     for(DataSnapshot ds2: ds.child("resultado").getChildren()){
                         lista.add(ds2.getValue(ActividadResultadoFB.class));
                         //lista.add(new ActividadResultadoFB());
                     }
-
                     mapaActividad.put(ds.getKey(),lista );
-
                 }
                 habilidad.put(Habilidad.MEMORIA.name(),mapaActividad);
-
-
 
                 mapaActividad = new TreeMap<>();
                 for (DataSnapshot ds: dataSnapshot.child("numeros").child("action_comunicar_numeros").child("action_percepcion").child(String.valueOf(3)).getChildren()){
@@ -739,10 +636,6 @@ public class NumParentActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
         return user;
     }
 
@@ -756,14 +649,10 @@ public class NumParentActivity extends AppCompatActivity {
     }
 
     public Class getNextActividad(){
-
         return null;
     }
 
-
     public void guardaResultadoActividadbyUser(){
-
-
     }
 
     /**
@@ -773,8 +662,6 @@ public class NumParentActivity extends AppCompatActivity {
      * numeros --->action_comunicar_numeros-->action_atencion-->3   -->A001     -->Resultado
      */
     public  void populateDataBase(final UsuarioFB usuarioFB){
-
-
         llenaMapaDatos();
         AsyncTask.execute(new Runnable() {
             @Override
@@ -806,8 +693,6 @@ public class NumParentActivity extends AppCompatActivity {
                 mDb.temaDao().insertAll(tema);
 
 
-
-
                 anel.com.mx.kgardenapp.entitty.Actividad actividad = new anel.com.mx.kgardenapp.entitty.Actividad();
                 actividad.setId("A001");
                 actividad.setNombre("Num3_5Activity.class");
@@ -818,7 +703,7 @@ public class NumParentActivity extends AppCompatActivity {
                 actividad.setHabilidad("PERCEPCION");
                 mDb.actividadDao().insertAll(actividad);
 
-                 actividad = new anel.com.mx.kgardenapp.entitty.Actividad();
+                actividad = new anel.com.mx.kgardenapp.entitty.Actividad();
                 actividad.setId("A002");
                 actividad.setNombre("Num3_5_0Activity.class");
                 actividad.setStatus(false);
@@ -848,7 +733,6 @@ public class NumParentActivity extends AppCompatActivity {
                 actividad.setHabilidad("ATENCION");
                 mDb.actividadDao().insertAll(actividad);
 
-
                 actividad = new anel.com.mx.kgardenapp.entitty.Actividad();
                 actividad.setId("A005");
                 actividad.setNombre("Num3_7a_Activity.class");
@@ -859,38 +743,33 @@ public class NumParentActivity extends AppCompatActivity {
                 actividad.setHabilidad("MEMORIA");
                 mDb.actividadDao().insertAll(actividad);
 
+                actividad = new anel.com.mx.kgardenapp.entitty.Actividad();
+                actividad.setId("A006");
+                actividad.setNombre("Nivel1.class");
+                actividad.setStatus(false);
+                actividad.setComplejidad("0");
+                actividad.setEje("NUMEROS");
+                actividad.setTema("action_comunicar_numeros");
+                actividad.setHabilidad("PERCEPCION");
+                mDb.actividadDao().insertAll(actividad);
             }
         });
-
-
-
-
     }
 
 
     public void llenaMapaDatos(){
-
-
-
         ejesMap.put(R.string.eje_numeros,getResources().getString(R.string.eje_numeros));
-
-
         temaMapa.put(R.string.action_comunicar_numeros,getResources().getString(R.string.action_comunicar_numeros));
-
-
         objetivoMap.put(R.string.action_atencion,getResources().getString(R.string.action_atencion));
         objetivoMap.put(R.string.action_percepcion,getResources().getString(R.string.action_percepcion));
         objetivoMap.put(R.string.action_memoria,getResources().getString(R.string.action_memoria));
-
 
         actividadesMap.put("Num3_5Activity","A001");
         actividadesMap.put("Num3_5_0Activity","A002");
         actividadesMap.put("Num3_5_1Activity","A003");
         actividadesMap.put("Num3_1Activity","A004");
         actividadesMap.put("Num3_7a_Activity","A005");
-
-
-
+        actividadesMap.put("Nivel1","A006");
     }
 
     public void guardaResultadoActividad(final Actividad actividad, long tFinal, final long tInicio, final Class claseDestino, final int[][] progresoJuego, final int aciertosTotales, final int fallosTotales, final Set<Integer> numExcluidosList, final int numeroPregunta, final int aciertosContinuos,final int fallosContinuos,final Class actividadClass){
@@ -938,17 +817,13 @@ public class NumParentActivity extends AppCompatActivity {
     }
 
     public void actualizaResultadoActividad(final Actividad actividad,final Class actividadClass){
-
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 //Insert Data
                 mDb = AppDatabase.getDatabase(getApplicationContext());
-
                 llenaMapaDatos();
-
                 mDb.actividadDao().updateActividadById(actividadesMap.get(actividadClass.getSimpleName()),true);
-
             }
         });
     }
@@ -960,8 +835,6 @@ public class NumParentActivity extends AppCompatActivity {
      * @return
      */
     public boolean getEstatusActividad(final Class actividadClass){
-
-
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -971,21 +844,16 @@ public class NumParentActivity extends AppCompatActivity {
                 llenaMapaDatos();
 
                 anel.com.mx.kgardenapp.entitty.Actividad actividad1=  mDb.actividadDao().getActividadbyId(actividadesMap.get(actividadClass.getSimpleName()));
-                if( actividad1 !=null){
-                    estatus= actividad1.getStatus();
+                if( actividad1 != null){
+                    estatus = actividad1.getStatus();
                 }
-
             }
         });
-
         return estatus;
     }
 
-
-
     @Override
     public void onBackPressed() {
-
         super.onBackPressed();
     }
 
@@ -1018,16 +886,10 @@ public class NumParentActivity extends AppCompatActivity {
                 }).create().show();
     }
 
-
-
     public void backMenu(View view){
-
         //backPrincipalMenu(MENU_PRINCIPAL);
         Intent intent = new Intent(getApplicationContext(), VideoNumeros.class);
         startActivity(intent);
         finish();
-
     }
-
-
 }

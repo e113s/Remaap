@@ -28,38 +28,28 @@ public class HMActivity extends NumParentActivity{
         final ToggleButton  buttonF = findViewById(R.id.toggleButtonFemale);
         mp= MediaPlayer.create(HMActivity.this, R.raw.ninoonina);
         mp.start();
+        mp.release();
 
+        final Intent intent = new Intent(this, AgeActivity.class);
 
-
-
-
-            final Intent intent = new Intent(this, AgeActivity.class);
-
-            forward.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    if(!buttonM.isChecked()&& !buttonF.isChecked())
-                    {
-                        mp= MediaPlayer.create(HMActivity.this, R.raw.ninoonina);
-                        mp.start();
-                    }else
-                    {
+        forward.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if(!buttonM.isChecked()&& !buttonF.isChecked())
+                {
+                    mp= MediaPlayer.create(HMActivity.this, R.raw.ninoonina);
+                    mp.start();
+                    mp.release();
+                }else {
                         intent.putExtra("nombre",nombre);
                         intent.putExtra("sexo",sexo);
                         startActivity(intent);
                         //velocidad de aparcion de otra actividad
                        // overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_left);
                     }
-
-
                 }
             });
 
-
-
-
-
-
-         nombre =getIntent().getExtras().getString("nombre");
+        nombre =getIntent().getExtras().getString("nombre");
 
         buttonM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -69,7 +59,6 @@ public class HMActivity extends NumParentActivity{
                     sexo="Hombre";
                 } else {
                     // The toggle is disabled
-
                 }
             }
         });
@@ -88,9 +77,6 @@ public class HMActivity extends NumParentActivity{
             }
         });
         //int[] state = button.getDrawableState();
-
-
-
 
         //regresa a la actividad anterior
 /*

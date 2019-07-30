@@ -83,7 +83,7 @@ public class WelcomeActivity extends NumParentActivity implements View.OnClickLi
         textViewUsuario.setText(nombre);
         textViewEdad= findViewById(R.id.textViewEdad);
         textViewEdad.setText( edad + " años");
-        imageView = (ImageView) findViewById(R.id.imageViewUsuario);
+        imageView = findViewById(R.id.imageViewUsuario);
 
         if (sexo.equalsIgnoreCase("Hombre")){
 
@@ -141,8 +141,6 @@ public class WelcomeActivity extends NumParentActivity implements View.OnClickLi
             });
         //}
 
-
-
         // llama a otro nivel
         Intent intent = new Intent(getApplicationContext(), DrawingActivity.class);
         startActivity(intent);
@@ -175,14 +173,7 @@ public class WelcomeActivity extends NumParentActivity implements View.OnClickLi
         }*/
         //sincroniza con la base de datos y crea el usuario
         //creaDatos(Integer.valueOf(edad));
-
-
-
     }
-
-
-
-
 
     /**
      * para usuarios nuevos
@@ -224,8 +215,4 @@ public class WelcomeActivity extends NumParentActivity implements View.OnClickLi
 */
 
     }
-
-
-
-
 }

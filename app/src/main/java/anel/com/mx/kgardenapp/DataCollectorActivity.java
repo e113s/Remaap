@@ -30,9 +30,10 @@ public class DataCollectorActivity extends NumParentActivity {
         setContentView(R.layout.activity_data_collector);
          forward =  findViewById(R.id.buttonForward1);
 
-        nombre = (EditText) findViewById(R.id.editTextNombre);
+        nombre = findViewById(R.id.editTextNombre);
         mp= MediaPlayer.create(DataCollectorActivity.this, R.raw.nombre);
         mp.start();
+        mp.release();
         //Toast.makeText(getApplicationContext(),"llamando a la actividad",Toast.LENGTH_LONG);
 
 
@@ -52,31 +53,24 @@ public class DataCollectorActivity extends NumParentActivity {
                 if(nombre.length()==0){
                     mp= MediaPlayer.create(DataCollectorActivity.this, R.raw.nombre);
                     mp.start();
+                    mp.release();
                     //TODO aqui debe de ponerse otra vez la voz para que pinga su nombre
                     //Toast.makeText(getApplicationContext(),"Ingresa tu nombre", Toast.LENGTH_LONG);
                 }else{
+                    mp.release();
                     Intent intent = new Intent(DataCollectorActivity.this, HMActivity.class);
                     intent.putExtra("nombre",nombre.getText().toString());
                     startActivity(intent);
                     //velocidad de aparcion de otra actividad
                    // overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_left);
                 }
-
-
             }
         });
-
-
-
     }
-
-
-
 
     @Override
     public void onBackPressed() {
     backPrincipalMenu(0);
     }
-
 
 }
