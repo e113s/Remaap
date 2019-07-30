@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewTarjeta"
+        android:layout_width="310dp"
+        android:layout_height="360dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="190dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="26dp"
+            android:orientation="horizontal"
+            android:textDirection="inherit">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewNumeroUno"
+                android:clickable="true"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1dp"
+                android:textAlignment="gravity"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNumeroUno"
+                    android:layout_width="77dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:baseline="@dimen/cardview_default_radius"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_cuatro_color"
+                    tools:baseline="@dimen/cardview_default_elevation" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+
+                android:id="@+id/cardViewNumeroDos"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+
+                    android:id="@+id/imageViewNumeroDos"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_cero_color" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewNumeroTres"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNumeroTres"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_ocho_color" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="190dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="26dp"
+            android:layout_marginTop="170dp"
+            android:orientation="horizontal"
+            android:textDirection="inherit">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewNumeroCuatro"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNumeroCuatro"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:baseline="@dimen/cardview_default_radius"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_seis_color"
+                    tools:baseline="@dimen/cardview_default_elevation" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+
+                android:id="@+id/cardViewNumeroCinco"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+
+                    android:id="@+id/imageViewNumeroCinco"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_dos_color" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewNumeroSeis"
+                android:layout_width="90dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewNumeroSeis"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/cardview_default_elevation"
+                    app:srcCompat="@drawable/num_cinco_color" />
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

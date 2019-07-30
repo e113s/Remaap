@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="415dp"
+    android:orientation="vertical"
+    android:background="@drawable/popup_frame"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layout1">
+
+        <TextView
+            android:id="@+id/txtclose"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textColor="@color/colorWhite"
+            android:text="X"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:background="@drawable/circle_backgound"
+            android:onClick="closeWindow"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below ="@+id/layout1" >
+
+        <TextView
+            android:id="@+id/textoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
+
+            android:textColor="@color/secondaryLightColor" />
+
+
+        <ImageView
+            android:id="@+id/imagenMensaje"
+            android:layout_width="200dp"
+            android:layout_height="201dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            />
+
+
+
+        <Button
+            android:id="@+id/btnfollow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_shape_light"
+            android:onClick="closeWindow"
+            android:text="@string/siguiente"
+            android:textColor="@color/secondaryLightColor"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
