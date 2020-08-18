@@ -22,6 +22,7 @@ public class Nivel1 extends AppCompatActivity implements View.OnTouchListener, V
     //TextView instrucciones,
     TextView txtvContador;
     String direc;
+    //String nom;
     int num, num2;
     int fallosTotales=0;
     int aciertosTotales=0;
